@@ -1,0 +1,37 @@
+---
+version: '3.8'
+
+services:
+
+  koha:
+    container_name: koha_docker
+    image: koha:latest
+    # cap_add:
+      # - SYS_NICE
+      # - DAC_READ_SEARCH
+    # depends_on:
+    #   - db
+    # environment:
+    #   KOHA_INSTANCE: name
+    #   KOHA_ADMINUSER: root
+    #   KOHA_ADMINPASS: secret
+    #   SIP_WORKERS: 3
+    #   SIP_AUTOUSER1: autouser
+    #   SIP_AUTOPASS1: autopass
+    ports:
+    #   - "8081:8081"
+      - "8080:8080"
+
+  # db:
+  #   container_name: koha_mysql
+  #   # Newer versions not working
+  #   image: mariadb:10.3
+  #   environment:
+  #     MARIADB_USER: user
+  #     MARIADB_PASSWORD: my_cool_secret
+  #     MARIADB_ROOT_PASSWORD: secret
+
+  # memcached:
+  #   command: memcached -m 64m
+  #   container_name: memcached
+  #   image: memcached
